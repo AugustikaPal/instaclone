@@ -1,4 +1,5 @@
 const multer = require("multer");
+
 const path = require("path");
 const crypto = require("crypto");
 
@@ -10,6 +11,8 @@ const storage = multer.diskStorage({
     const fn =
       crypto.randomBytes(16).toString("hex") + path.extname(file.originalname);
     cb(null, fn);
+    // const fn = uuid.v4() ;
+    // cb(null, fn + path.extname(file.originalname));
   },
 });
 
